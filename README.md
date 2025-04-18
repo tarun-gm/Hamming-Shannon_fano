@@ -11,6 +11,10 @@ Write the program
 ```
 Compare the manually calculated value and the observed practical value.
 ```
+# Output
+```
+Attach the Output waveform
+``` 
 # Results:
 ```
 Write the conclusion
