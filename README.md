@@ -8,4 +8,10 @@ Apply the Huffman and Shannon-Fano to this source. Show that draw the tree diagr
 Write the program 
 ```
 # Calculation:
+```
+Compare the manually calculated value and the observed practical value.
+```
 # Results:
+```
+Write the conclusion
+```
