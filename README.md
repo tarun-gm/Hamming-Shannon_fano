@@ -4,7 +4,8 @@ Consider a discrete memoryless source with symbols and statistics {0.125, 0.0625
 Apply the Huffman and Shannon-Fano to this source. Show that draw the tree diagram, the average code word length, Entropy, Variance, Redundancy, Efficiency.
 # Tools Required:
 # Program:
-`Write the program 
-`
+```
+Write the program 
+```
 # Calculation:
 # Results:
