@@ -5,44 +5,51 @@ Apply the Huffman and Shannon-Fano to this source.
 Show that by drawing the tree diagram, and 
 Calculate the average code word length, entropy, variance, redundancy, and efficiency.
 # Program:
-import math
+```
+p = [0.25,0.25,0.125,0.125,0.125,0.0625,0.0625];
 
-# Probabilities given
-p = [0.55,0.15,0.15,0.1,0.05]
+# Code lengths
+lk = [2,2,3,3,3,4,4];
 
-# Corresponding Huffman/Shannon-Fano code lengths
-lk = [1,3,3,3,3]
-n = len(p)
+n = len(p);
 
 # Average Codeword Length
-L = sum(p[k] * lk[k] for k in range(n))
+L = sum(p[k] * lk[k] for k in range(n));
 
 # Entropy
-hs = sum(p[k] * math.log(1 / p[k], 2) for k in range(n))
-hs = round(hs, 3)
+import math
+hs = 0;
+for k in range(n):
+    hs = hs + p[k] * math.log2(1/p[k]);
+hs = round(hs*1000)/1000;
 
 # Efficiency & Redundancy
-eff = round(hs / L, 3)
-red = round(1 - eff, 3)
+eff = round((hs / L)*1000)/1000;
+red = round((1 - eff)*1000)/1000;
 
 # Variance of codeword length
-var = sum(p[k] * (lk[k] - L) ** 2 for k in range(n))
-var = round(var, 3)
+var = sum(p[k] * (lk[k] - L)**2 for k in range(n));
+var = round(var*1000)/1000;
 
-print(f"Average Codeword Length is : {L}")
-print(f"Entropy is : {hs}")
-print(f"Efficiency is : {eff * 100}%")
-print(f"Redundancy is : {red}")
-print(f"Variance is : {var}")
-
+print("Average Codeword Length is : " + str(L));
+print("Entropy is : " + str(hs));
+print("Efficiency is : " + str(eff*100) + "%");
+print("Redundancy is : " + str(red));
+print("Variance is : " + str(var));
+```
 # calculations
-![WhatsApp Image 2025-09-19 at 11 04 51 AM](https://github.com/user-attachments/assets/3bc87b50-5c88-45fb-a50e-95b0ecdefaa3)
+<img width="1274" height="1280" alt="image" src="https://github.com/user-attachments/assets/330ce35e-a7c9-42a1-8d7e-53b21479d9ba" />
+
 
 
 # Output
-<img width="324" height="144" alt="Screenshot 2025-09-19 092450" src="https://github.com/user-attachments/assets/df27fe19-79fc-403d-80af-5c222a08ef04" />
-
-
+```
+Average Codeword Length is : 2.625
+Entropy is : 2.625
+Efficiency is : 100.0%
+Redundancy is : 0.0
+Variance is : 0.484
+```
 # Results:
 Hence the average code word length, entropy, variance, redundancy, and efficiency are found for  {0.55,0.15,0.15,0.1,0.05} usinf huffman
  
